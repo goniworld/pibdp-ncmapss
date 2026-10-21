@@ -1,0 +1,118 @@
+Post-hoc CBM+ maintenance simulation 2026-10-21 13:41:44 (NOT pre-registered)
+L=5, dt=1, Dp=2.0, rho0=10, tau0=6, c90=1.842; tuned tau chosen on dev LOUO-CV predictions (global over subsets)
+
+rho = 10 with hierarchical bootstrap 95% CI (downtime per 1000 cycles) and difference vs PI-BDP q05 calibrated (untuned):
+             group                    policy  tau  downtime      lo      hi  fail_rate  unused  diff_vs_PIcal  diff_lo  diff_hi
+         reference                        CM  NaN   265.487 243.181 291.723      1.000   0.000        213.559  180.179  243.215
+         reference TBM (Weibull optimal age)  NaN    41.981  37.313  47.059      0.000   0.362         -9.947  -42.638   11.457
+         reference                    Oracle  NaN    26.906  24.617  29.604      0.000   0.014        -25.022  -58.093   -3.358
+untuned (tau=L+dt)          PI-BDP q05 (raw)  6.0    62.016  28.443 106.555      0.128   0.075         10.088   -4.564   36.217
+untuned (tau=L+dt)   PI-BDP q05 (calibrated)  6.0    51.928  29.526  85.890      0.077   0.130          0.000    0.000    0.000
+untuned (tau=L+dt)                        RF  6.0   181.443 128.909 234.657      0.641   0.009        129.516   78.706  180.172
+untuned (tau=L+dt)                        GB  6.0   248.205 206.514 281.988      0.923   0.004        196.278  150.347  232.512
+untuned (tau=L+dt)                      LSTM  6.0   186.969 130.685 248.327      0.641   0.036        135.041   83.315  189.770
+untuned (tau=L+dt)          CNN (lit.-style)  6.0   175.198 115.858 233.866      0.615   0.009        123.270   65.883  178.465
+      tuned on dev          PI-BDP q05 (raw) 10.0    51.442  28.704  90.740      0.077   0.125         -0.486  -28.579   25.222
+      tuned on dev             PI-BDP median 19.0    53.812  30.082  93.904      0.077   0.170          1.884  -35.201   35.552
+      tuned on dev                        RF 26.0    51.630  32.212  92.309      0.051   0.250         -0.297  -35.172   31.470
+      tuned on dev                        GB 21.0    47.599  29.541  86.592      0.051   0.187         -4.328  -38.423   25.995
+      tuned on dev                      LSTM 24.0    53.221  33.560  86.772      0.051   0.276          1.294  -19.446   12.752
+
+All rho:
+ rho              group                    policy  tau  downtime  fail_rate  unused
+   2          reference                        CM  NaN    53.097      1.000   0.000
+   2          reference TBM (Weibull optimal age)  NaN    35.441      0.128   0.147
+   2          reference                    Oracle  NaN    26.906      0.000   0.014
+   2 untuned (tau=L+dt)          PI-BDP q05 (raw)  6.0    32.484      0.128   0.075
+   2 untuned (tau=L+dt)   PI-BDP q05 (calibrated)  6.0    33.045      0.077   0.130
+   2 untuned (tau=L+dt)                        RF  6.0    43.986      0.641   0.009
+   2 untuned (tau=L+dt)                        GB  6.0    51.282      0.923   0.004
+   2 untuned (tau=L+dt)                      LSTM  6.0    45.326      0.641   0.036
+   2 untuned (tau=L+dt)          CNN (lit.-style)  6.0    43.284      0.615   0.009
+   2       tuned on dev          PI-BDP q05 (raw) 10.0    32.736      0.077   0.125
+   2       tuned on dev             PI-BDP median 13.0    32.971      0.128   0.095
+   2       tuned on dev                        RF 11.0    32.585      0.154   0.059
+   2       tuned on dev                        GB 12.0    32.692      0.154   0.064
+   2       tuned on dev                      LSTM 16.0    33.885      0.077   0.155
+   5          reference                        CM  NaN   132.743      1.000   0.000
+   5          reference TBM (Weibull optimal age)  NaN    37.736      0.000   0.290
+   5          reference                    Oracle  NaN    26.906      0.000   0.014
+   5 untuned (tau=L+dt)          PI-BDP q05 (raw)  6.0    43.559      0.128   0.075
+   5 untuned (tau=L+dt)   PI-BDP q05 (calibrated)  6.0    40.126      0.077   0.130
+   5 untuned (tau=L+dt)                        RF  6.0    95.533      0.641   0.009
+   5 untuned (tau=L+dt)                        GB  6.0   125.128      0.923   0.004
+   5 untuned (tau=L+dt)                      LSTM  6.0    98.442      0.641   0.036
+   5 untuned (tau=L+dt)          CNN (lit.-style)  6.0    92.752      0.615   0.009
+   5       tuned on dev          PI-BDP q05 (raw) 10.0    39.751      0.077   0.125
+   5       tuned on dev             PI-BDP median 19.0    41.582      0.077   0.170
+   5       tuned on dev                        RF 21.0    45.738      0.103   0.182
+   5       tuned on dev                        GB 21.0    39.248      0.051   0.187
+   5       tuned on dev                      LSTM 17.0    41.718      0.077   0.166
+  10          reference                        CM  NaN   265.487      1.000   0.000
+  10          reference TBM (Weibull optimal age)  NaN    41.981      0.000   0.362
+  10          reference                    Oracle  NaN    26.906      0.000   0.014
+  10 untuned (tau=L+dt)          PI-BDP q05 (raw)  6.0    62.016      0.128   0.075
+  10 untuned (tau=L+dt)   PI-BDP q05 (calibrated)  6.0    51.928      0.077   0.130
+  10 untuned (tau=L+dt)                        RF  6.0   181.443      0.641   0.009
+  10 untuned (tau=L+dt)                        GB  6.0   248.205      0.923   0.004
+  10 untuned (tau=L+dt)                      LSTM  6.0   186.969      0.641   0.036
+  10 untuned (tau=L+dt)          CNN (lit.-style)  6.0   175.198      0.615   0.009
+  10       tuned on dev          PI-BDP q05 (raw) 10.0    51.442      0.077   0.125
+  10       tuned on dev             PI-BDP median 19.0    53.812      0.077   0.170
+  10       tuned on dev                        RF 26.0    51.630      0.051   0.250
+  10       tuned on dev                        GB 21.0    47.599      0.051   0.187
+  10       tuned on dev                      LSTM 24.0    53.221      0.051   0.276
+  20          reference                        CM  NaN   530.973      1.000   0.000
+  20          reference TBM (Weibull optimal age)  NaN    45.748      0.000   0.414
+  20          reference                    Oracle  NaN    26.906      0.000   0.014
+  20 untuned (tau=L+dt)          PI-BDP q05 (raw)  6.0    98.929      0.128   0.075
+  20 untuned (tau=L+dt)   PI-BDP q05 (calibrated)  6.0    75.531      0.077   0.130
+  20 untuned (tau=L+dt)                        RF  6.0   353.265      0.641   0.009
+  20 untuned (tau=L+dt)                        GB  6.0   494.359      0.923   0.004
+  20 untuned (tau=L+dt)                      LSTM  6.0   364.023      0.641   0.036
+  20 untuned (tau=L+dt)          CNN (lit.-style)  6.0   340.089      0.615   0.009
+  20       tuned on dev          PI-BDP q05 (raw) 10.0    74.825      0.077   0.125
+  20       tuned on dev             PI-BDP median 19.0    78.272      0.077   0.170
+  20       tuned on dev                        RF 38.0    71.385      0.026   0.453
+  20       tuned on dev                        GB 39.0    52.917      0.000   0.503
+  20       tuned on dev                      LSTM 24.0    71.895      0.051   0.276
+  50          reference                        CM  NaN  1327.434      1.000   0.000
+  50          reference TBM (Weibull optimal age)  NaN    51.793      0.000   0.483
+  50          reference                    Oracle  NaN    26.906      0.000   0.014
+  50 untuned (tau=L+dt)          PI-BDP q05 (raw)  6.0   209.671      0.128   0.075
+  50 untuned (tau=L+dt)   PI-BDP q05 (calibrated)  6.0   146.341      0.077   0.130
+  50 untuned (tau=L+dt)                        RF  6.0   868.729      0.641   0.009
+  50 untuned (tau=L+dt)                        GB  6.0  1232.821      0.923   0.004
+  50 untuned (tau=L+dt)                      LSTM  6.0   895.184      0.641   0.036
+  50 untuned (tau=L+dt)          CNN (lit.-style)  6.0   834.765      0.615   0.009
+  50       tuned on dev          PI-BDP q05 (raw) 10.0   144.973      0.077   0.125
+  50       tuned on dev             PI-BDP median 19.0   151.651      0.077   0.170
+  50       tuned on dev                        RF 38.0   108.308      0.026   0.453
+  50       tuned on dev                        GB 39.0    52.917      0.000   0.503
+  50       tuned on dev                      LSTM 24.0   127.918      0.051   0.276
+
+Per subset (rho=10, untuned + TBM), downtime per 1000 cycles:
+policy     CNN (lit.-style)      GB    LSTM  PI-BDP q05 (calibrated)  PI-BDP q05 (raw)      RF    TBM
+subset                                                                                               
+DS01-005             182.35  234.60  129.79                    26.06             24.46  129.79  31.25
+DS02-006             297.03  297.03  318.18                   120.60            120.00  208.96  41.67
+DS03-012             152.78  273.97  112.15                    29.56             28.57  152.78  43.48
+DS04                 232.56  132.53  132.53                    40.00             30.77  132.53  40.82
+DS05                 190.77  244.65  193.15                    25.24             24.92  244.65  43.48
+DS06                  82.02  248.45  193.75                    82.80            138.36  193.15  41.67
+DS07                  23.88  232.56  131.34                    29.96             27.30   76.47  33.90
+DS08a-009            267.72  313.32  314.14                    90.36            134.08  267.02  54.05
+DS08c-008            187.23  262.71  263.83                    40.00             37.74  262.71  52.63
+
+Per subset unplanned failure rate:
+policy     CNN (lit.-style)    GB  LSTM  PI-BDP q05 (calibrated)  PI-BDP q05 (raw)    RF  TBM
+subset                                                                                       
+DS01-005               0.75  1.00  0.50                     0.00              0.00  0.50  0.0
+DS02-006               1.00  1.00  0.67                     0.33              0.33  0.67  0.0
+DS03-012               0.50  1.00  0.33                     0.00              0.00  0.50  0.0
+DS04                   1.00  0.50  0.50                     0.00              0.00  0.50  0.0
+DS05                   0.75  1.00  0.75                     0.00              0.00  1.00  0.0
+DS06                   0.25  1.00  0.75                     0.25              0.50  0.75  0.0
+DS07                   0.00  1.00  0.50                     0.00              0.00  0.25  0.0
+DS08a-009              0.83  1.00  1.00                     0.17              0.33  0.83  0.0
+DS08c-008              0.50  0.75  0.75                     0.00              0.00  0.75  0.0
