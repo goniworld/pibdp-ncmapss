@@ -1,0 +1,115 @@
+Phase 3 summary (TEST, evaluated once) 2026-10-21 09:00:23  freeze=https://github.com/goniworld/pibdp-ncmapss/commit/d2ecc6ef5c5f7da1b53dca674ff220e876c7acb4
+
+P1 point metrics (test, all cycles):
+                      model    n   rmse    nasa_mean        phm21  mean_subset_rmse  alpha_lambda_0.25  alpha_lambda_0.5  alpha_lambda_0.75  ph_frac_mean  rmse_seed_sd
+                  PI-BDP_V0 2938  7.637 9.070000e-01 4.272000e+00             7.339              0.744             0.769              0.667         0.566           NaN
+                  PI-BDP_V1 2938  7.555 9.860000e-01 4.270000e+00             7.311              0.769             0.692              0.692         0.535           NaN
+               PI-noWeibull 2938 10.917 4.539464e+03 2.275190e+03             9.049              0.795             0.744              0.615         0.532           NaN
+                    DHI-Exp 2938 10.473 1.735800e+01 1.391600e+01             9.849              0.538             0.590              0.487         0.360           NaN
+        RF (seed-mean pred) 2938  9.455 1.296000e+00 5.375000e+00             9.013              0.564             0.615              0.641         0.470           NaN
+        GB (seed-mean pred) 2938  9.107 1.256000e+00 5.181000e+00             8.746              0.641             0.564              0.590         0.389           NaN
+       MLP (seed-mean pred) 2938 17.672 2.814418e+08 1.407209e+08            14.850              0.564             0.615              0.487         0.238           NaN
+      LSTM (seed-mean pred) 2938 10.147 1.878000e+00 6.013000e+00            10.057              0.538             0.615              0.538         0.428           NaN
+       CNN (seed-mean pred) 2938 20.603 1.048929e+16 5.244644e+15            16.871              0.615             0.538              0.564         0.349           NaN
+RawCNN-1Hz (seed-mean pred) 2938 14.141 2.976000e+00 8.558000e+00            13.437              0.641             0.487              0.128         0.229           NaN
+         RF (per-seed mean) 2938  9.463          NaN          NaN               NaN                NaN               NaN                NaN           NaN         0.036
+         GB (per-seed mean) 2938  9.107          NaN          NaN               NaN                NaN               NaN                NaN           NaN         0.000
+        MLP (per-seed mean) 2938 18.103          NaN          NaN               NaN                NaN               NaN                NaN           NaN         1.375
+       LSTM (per-seed mean) 2938 10.648          NaN          NaN               NaN                NaN               NaN                NaN           NaN         0.743
+        CNN (per-seed mean) 2938 21.686          NaN          NaN               NaN                NaN               NaN                NaN           NaN         5.584
+ RawCNN-1Hz (per-seed mean) 2938 15.874          NaN          NaN               NaN                NaN               NaN                NaN           NaN         1.187
+
+Per-subset RMSE:
+           PI-BDP_V0  PI-BDP_V1  PI-noWeibull  DHI-Exp  RF (seed-mean pred)  GB (seed-mean pred)  MLP (seed-mean pred)  LSTM (seed-mean pred)  CNN (seed-mean pred)  RawCNN-1Hz (seed-mean pred)
+subset                                                                                                                                                                                          
+DS01-005       7.575      6.717         7.523    8.167                7.274                6.395                 6.939                  8.129                 8.495                       12.282
+DS02-006       7.238      7.701         7.148    8.386                6.456                7.854                11.289                 13.230                 9.646                        8.778
+DS03-012       7.800      7.772         8.396    9.666               10.442                8.820                10.824                  8.626                11.344                       11.190
+DS04           8.239      7.871         9.132   10.497                9.598                9.806                10.496                 12.771                10.627                       21.101
+DS05           5.099      4.825         5.107    6.836                8.522                8.309                 8.574                  6.378                 7.509                       11.820
+DS06           6.108      5.923         6.896   10.654                9.661               10.009                31.707                  9.534                47.403                       12.260
+DS07           9.003      8.460         9.162   10.194               10.663                9.033                 9.983                 11.742                14.794                       17.751
+DS08a-009      9.726     10.130        22.970   16.551               11.773               12.326                30.832                 10.983                23.335                       14.407
+DS08c-008      5.267      6.402         5.105    7.686                6.723                6.161                13.002                  9.124                18.684                       11.343
+
+RMSE by life fraction:
+         PI-BDP_V0  PI-BDP_V1  PI-noWeibull  DHI-Exp  RF (seed-mean pred)  GB (seed-mean pred)  MLP (seed-mean pred)  LSTM (seed-mean pred)  CNN (seed-mean pred)  RawCNN-1Hz (seed-mean pred)
+bin                                                                                                                                                                                           
+0-25%        9.105      9.038         9.253   11.190               13.271               12.385                12.441                 15.295                16.779                       20.844
+25-50%       8.009      7.867         8.421   10.437                9.084                8.932                10.933                  9.995                10.968                        8.894
+50-75%       6.468      5.948         7.700    7.775                6.406                6.535                 8.188                  6.559                 7.423                       11.995
+75-100%      6.712      7.062        16.046   11.981                7.758                7.597                29.884                  6.233                34.965                       12.221
+
+Secondary: predictions clipped to [0, 100 - t]:
+                      model  clipped_rmse  clipped_nasa_mean  clipped_phm21
+                  PI-BDP_V0         7.585              0.887          4.236
+                  PI-BDP_V1         7.366              0.818          4.092
+               PI-noWeibull         7.940              0.969          4.455
+                    DHI-Exp         9.165              1.200          5.182
+        RF (seed-mean pred)         9.304              1.173          5.238
+        GB (seed-mean pred)         8.942              1.118          5.030
+       MLP (seed-mean pred)        11.064              2.213          6.639
+      LSTM (seed-mean pred)        10.029              1.479          5.754
+       CNN (seed-mean pred)        11.492              2.070          6.781
+RawCNN-1Hz (seed-mean pred)        13.238              2.299          7.769
+
+P2 probabilistic (raw vs pre-registered conformal scaling):
+    model     scope  crps  raw_cov50  raw_width50  raw_cov80  raw_width80  raw_cov90  raw_width90  raw_iscore90  raw_cov95  raw_width95  cal_cov50  cal_width50  cal_cov80  cal_width80  cal_cov90  cal_width90  cal_iscore90  cal_cov95  cal_width95
+PI-BDP_V0       ALL 4.164      0.462        8.506      0.709       16.084      0.776       20.535        39.355      0.826       24.326      0.632       13.163      0.838       25.214      0.929       37.068        43.127      0.962       49.078
+PI-BDP_V0  DS01-005 4.139      0.543        9.847      0.762       18.563      0.856       23.701        30.882      0.921       28.055      0.628       15.269      0.930       29.362      1.000       43.494        43.494      1.000       58.075
+PI-BDP_V0  DS02-006 4.442      0.158        4.905      0.381        9.269      0.446       11.858        45.400      0.490       14.093      0.307        7.635      0.515       14.681      0.837       21.840        29.462      0.861       29.380
+PI-BDP_V0  DS03-012 3.832      0.416        6.868      0.683       12.992      0.792       16.597        30.017      0.863       19.685      0.621       10.659      0.884       20.571      0.995       30.531        30.586      1.000       40.942
+PI-BDP_V0      DS04 4.778      0.683       17.032      1.000       32.224      1.000       40.983        40.983      1.000       48.304      0.953       26.108      1.000       49.055      1.000       69.959        69.959      1.000       88.945
+PI-BDP_V0      DS05 2.570      0.740        9.171      0.933       17.304      0.985       22.083        22.160      0.994       26.190      0.853       14.232      0.997       27.414      1.000       40.678        40.678      1.000       54.602
+PI-BDP_V0      DS06 3.351      0.494        7.809      0.783       14.775      0.854       18.857        29.025      0.904       22.359      0.693       12.115      0.910       23.403      0.944       34.731        39.559      0.957       46.608
+PI-BDP_V0      DS07 5.340      0.340        5.962      0.541       11.328      0.613       14.564        65.018      0.724       17.377      0.474        9.238      0.724       17.776      0.724       26.324        46.564      0.872       35.103
+PI-BDP_V0 DS08a-009 5.281      0.407        8.968      0.723       16.939      0.809       21.643        54.156      0.841       25.633      0.661       13.928      0.851       26.818      0.919       39.780        58.839      0.940       53.212
+PI-BDP_V0 DS08c-008 3.472      0.203        3.278      0.346        6.230      0.380        7.994        37.873      0.443        9.525      0.270        5.096      0.485        9.824      0.869       14.545        16.326      0.987       19.429
+PI-BDP_V1       ALL 4.089      0.480        8.335      0.722       16.117      0.781       20.967        38.852      0.835       25.222      0.620       12.100      0.846       25.490      0.933       37.121        42.751      0.942       47.143
+PI-BDP_V1  DS01-005 3.845      0.575        9.607      0.762       19.509      0.842       26.038        35.013      0.906       31.984      0.645       13.955      0.912       31.022      1.000       46.486        46.486      1.000       60.456
+PI-BDP_V1  DS02-006 4.587      0.188        6.037      0.421       11.020      0.495       14.165        40.723      0.589       16.691      0.337        8.790      0.634       17.555      0.866       25.385        31.869      0.866       31.743
+PI-BDP_V1  DS03-012 3.816      0.452        6.852      0.717       13.444      0.801       17.576        29.451      0.886       21.141      0.614        9.960      0.877       21.396      0.995       31.420        31.510      1.000       40.080
+PI-BDP_V1      DS04 4.466      0.680       15.687      1.000       30.225      1.000       38.938        38.938      1.000       46.623      0.898       22.664      1.000       46.865      1.000       66.758        66.758      1.000       83.343
+PI-BDP_V1      DS05 2.555      0.768        9.853      0.976       18.592      0.982       23.719        23.855      0.988       28.186      0.890       14.323      0.988       29.624      1.000       42.518        42.518      1.000       53.618
+PI-BDP_V1      DS06 3.276      0.534        7.967      0.823       15.420      0.901       20.009        28.421      0.929       24.016      0.652       11.579      0.929       24.563      0.944       35.862        40.714      0.953       45.676
+PI-BDP_V1      DS07 5.017      0.416        5.621      0.532       10.854      0.605       14.145        64.721      0.724       17.155      0.468        8.172      0.724       17.165      0.724       24.987        49.515      0.727       31.919
+PI-BDP_V1 DS08a-009 5.147      0.308        7.871      0.695       15.154      0.799       20.041        48.663      0.849       24.221      0.564       11.445      0.851       24.119      0.916       35.837        48.317      0.930       45.853
+PI-BDP_V1 DS08c-008 4.140      0.249        3.630      0.354        6.774      0.371        8.560        41.493      0.414       10.120      0.329        5.269      0.511       10.693      0.903       15.117        16.860      0.975       18.867
+
+P3 HI vs true damage (test units):
+          spearman_hi_damage       
+                        mean    min
+subset                             
+DS01-005               0.970  0.956
+DS02-006               0.965  0.946
+DS03-012               0.973  0.942
+DS04                   0.965  0.926
+DS05                   0.959  0.947
+DS06                   0.945  0.924
+DS07                   0.961  0.946
+DS08a-009              0.812 -0.036
+DS08c-008              0.984  0.978
+
+           rho_sev1_HPT_eff_mod  rho_sev1_LPT_eff_mod  rho_sev1_LPT_flow_mod  rho_sev2_HPT_eff_mod  rho_sev2_LPT_eff_mod  rho_sev2_LPT_flow_mod  rho_sev1_fan_eff_mod  rho_sev1_fan_flow_mod  rho_sev1_HPC_eff_mod  rho_sev1_HPC_flow_mod  rho_sev1_LPC_eff_mod  rho_sev1_LPC_flow_mod  rho_sev1_HPT_flow_mod  rho_sev2_fan_eff_mod  rho_sev2_fan_flow_mod  rho_sev2_LPC_eff_mod  rho_sev2_LPC_flow_mod  rho_sev2_HPC_eff_mod  rho_sev2_HPC_flow_mod  rho_sev2_HPT_flow_mod
+subset                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+DS01-005                   0.97                   NaN                    NaN                   NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS02-006                   0.94                  0.91                   0.94                  0.18                  0.23                   0.18                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS03-012                   0.95                  0.97                   0.94                  0.15                  0.11                   0.16                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS04                        NaN                   NaN                    NaN                   NaN                   NaN                    NaN                  0.96                   0.98                   NaN                    NaN                   NaN                    NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS05                        NaN                   NaN                    NaN                   NaN                   NaN                    NaN                   NaN                    NaN                  0.96                   0.95                   NaN                    NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS06                        NaN                   NaN                    NaN                   NaN                   NaN                    NaN                   NaN                    NaN                  0.95                   0.94                  0.94                   0.93                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS07                        NaN                  0.96                   0.95                   NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+DS08a-009                  0.03                  0.04                   0.03                  0.65                  0.62                   0.64                  0.03                   0.08                  0.03                   0.04                  0.04                   0.03                   0.05                  0.63                   0.61                  0.63                   0.62                  0.63                   0.62                   0.62
+DS08c-008                  0.97                  0.96                   0.96                   NaN                   NaN                    NaN                  0.97                   0.97                  0.96                   0.97                  0.97                   0.96                   0.95                   NaN                    NaN                   NaN                    NaN                   NaN                    NaN                    NaN
+
+Paired hierarchical bootstrap, RMSE(V0) - RMSE(model); negative = V0 better:
+       comparison                 family     diff    ci_lo   ci_hi  p_boot  p_holm
+          V0 - RF                primary  -1.8178  -2.9415 -0.6079  0.0052  0.0104
+          V0 - GB                primary  -1.4698  -2.8217 -0.1165  0.0316  0.0316
+         V0 - MLP                primary -10.0353 -18.7349 -1.7995  0.0003  0.0013
+        V0 - LSTM                primary  -2.5103  -4.4906 -0.8392  0.0021  0.0062
+         V0 - CNN                primary -12.9666 -27.1645 -2.7639  0.0000  0.0002
+          V0 - V1 secondary (unadjusted)   0.0822  -0.5251  0.6914  0.7619     NaN
+  V0 - RawCNN-1Hz secondary (unadjusted)  -6.5038  -9.1245 -4.2563  0.0000     NaN
+V0 - PI-noWeibull secondary (unadjusted)  -3.2800  -9.1956  0.1285  0.1134     NaN
+     V0 - DHI-Exp secondary (unadjusted)  -2.8364  -5.2732 -1.0550  0.0000     NaN
