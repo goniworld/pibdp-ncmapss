@@ -1,0 +1,35 @@
+{
+ "RF": {
+  "trial": 2,
+  "params": {
+   "n_estimators": 200,
+   "min_samples_leaf": 10,
+   "max_features": 0.3,
+   "max_depth": 5
+  },
+  "tuning_mean_subset_rmse": 10.020194771492845
+ },
+ "GB": {
+  "trial": 10,
+  "params": {
+   "min_samples_leaf": 20,
+   "max_leaf_nodes": 31,
+   "max_iter": 100,
+   "learning_rate": 0.03,
+   "l2_regularization": 0.0
+  },
+  "tuning_mean_subset_rmse": 10.396481956130897
+ },
+ "MLP": {
+  "trial": 17,
+  "params": {
+   "learning_rate_init": 0.001,
+   "hidden_layer_sizes": [
+    64,
+    32
+   ],
+   "alpha": 0.001
+  },
+  "tuning_mean_subset_rmse": 14.668587661258757
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "arch": "A_paperlike",
+ "params": {
+  "L": 50,
+  "filters": 10,
+  "kernel": 10,
+  "layers": 3,
+  "head": "flatten",
+  "dense": 50,
+  "dropout": 0.0
+ },
+ "epochs": 30,
+ "batch": 512,
+ "lr": 0.001,
+ "tr_stride": 100,
+ "ev_stride": 50,
+ "n_seeds": 5,
+ "tune_subset": "DS02-006"
+}

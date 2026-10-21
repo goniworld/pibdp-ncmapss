@@ -1,0 +1,47 @@
+{
+ "DS01-005": {
+  "file": "N-CMAPSS_DS01-005.h5",
+  "bytes": 2873351432,
+  "sha256": "3abdcee2a3c8136e8880e5d43ac8cdf12ab9f7f3ab37145f23b24c11335afbed"
+ },
+ "DS02-006": {
+  "file": "N-CMAPSS_DS02-006.h5",
+  "bytes": 2450472504,
+  "sha256": "47971a68b239ecb756833218a95d68ded6eb7e63ee84e86671c8b188de1ca765"
+ },
+ "DS03-012": {
+  "file": "N-CMAPSS_DS03-012.h5",
+  "bytes": 3693395776,
+  "sha256": "f67cc4bd0cf927f09eb8e0198bd62c777e1c6213177cfc46d81cc43bba52c333"
+ },
+ "DS04": {
+  "file": "N-CMAPSS_DS04.h5",
+  "bytes": 3752493952,
+  "sha256": "2b58cbb78497679fadafe0761203b2ae3b0e4e1193039dc34ca25f17ecaeb2e6"
+ },
+ "DS05": {
+  "file": "N-CMAPSS_DS05.h5",
+  "bytes": 2599166216,
+  "sha256": "ef99ead42ac184503035895797c16e9a7e42554a08074aa760d0bba39db42e23"
+ },
+ "DS06": {
+  "file": "N-CMAPSS_DS06.h5",
+  "bytes": 2549159720,
+  "sha256": "91ccf478b21dd6337cfa608f20b647ec04228d59cf4ee59be87fad5f08b17b20"
+ },
+ "DS07": {
+  "file": "N-CMAPSS_DS07.h5",
+  "bytes": 2714714776,
+  "sha256": "2f88abc61a532d2e30a6e5ff100a511be4921484a6c7071bc8504e300da4d3bd"
+ },
+ "DS08a-009": {
+  "file": "N-CMAPSS_DS08a-009.h5",
+  "bytes": 3236762200,
+  "sha256": "10ddf52e5441a05e3d0d8d797a34e0e5a9ac73dce8ae35d7b22d1ef224d24836"
+ },
+ "DS08c-008": {
+  "file": "N-CMAPSS_DS08c-008.h5",
+  "bytes": 2413078176,
+  "sha256": "150bf696dcf4bbac84518f439ac0d491410037881e214c5b10c048a71770bb38"
+ }
+}

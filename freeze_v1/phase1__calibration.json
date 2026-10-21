@@ -1,0 +1,53 @@
+{
+ "created": "2026-10-20 13:39:57",
+ "method": "normalized split-conformal scaling around the median",
+ "levels": [
+  50,
+  80,
+  90,
+  95
+ ],
+ "quantile_cols": {
+  "50": [
+   "q250",
+   "q750"
+  ],
+  "80": [
+   "q100",
+   "q900"
+  ],
+  "90": [
+   "q050",
+   "q950"
+  ],
+  "95": [
+   "q025",
+   "q975"
+  ]
+ },
+ "eps": 0.5,
+ "subset_weighting": "equal (1/n_subset)",
+ "c": {
+  "50": 1.5511199087332235,
+  "80": 1.584242838316265,
+  "90": 1.8424733212808164,
+  "95": 2.0857639458801254
+ },
+ "config_ref": {
+  "baseline": "poly3",
+  "n_h": 10,
+  "shrink": 0.5,
+  "k": {
+   "DS01-005": 1,
+   "DS02-006": 2,
+   "DS03-012": 2,
+   "DS04": 1,
+   "DS05": 1,
+   "DS06": 1,
+   "DS07": 1,
+   "DS08a-009": 2,
+   "DS08c-008": 1
+  }
+ },
+ "note": "Fitted on dev LOUO-CV predictions only (Phase 1). Apply unchanged to test in Phase 3."
+}

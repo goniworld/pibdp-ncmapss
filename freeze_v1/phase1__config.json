@@ -1,0 +1,36 @@
+{
+ "created": "2026-10-20 13:18:26",
+ "baseline": "poly3",
+ "n_h": 10,
+ "shrink": 0.5,
+ "k": {
+  "DS01-005": 1,
+  "DS02-006": 2,
+  "DS03-012": 2,
+  "DS04": 1,
+  "DS05": 1,
+  "DS06": 1,
+  "DS07": 1,
+  "DS08a-009": 2,
+  "DS08c-008": 1
+ },
+ "n_e": 5,
+ "c_min": 5.0,
+ "TS": 100.0,
+ "cap_cycles": 100,
+ "fuse": true,
+ "selection": {
+  "stageA_mse": {
+   "hgb": 7e-05,
+   "poly2": 3e-05,
+   "poly3": 2e-05
+  },
+  "stageB_mean_rmse": {
+   "n_h=5,shrink=0.0": 9.4455,
+   "n_h=5,shrink=0.5": 9.1426,
+   "n_h=10,shrink=0.0": 9.2674,
+   "n_h=10,shrink=0.5": 8.977
+  },
+  "rule": "baseline: min mean LOUO healthy MSE; (n_h, shrink): min mean subset CV RMSE; k=2 only if >=5% lower RMSE"
+ }
+}

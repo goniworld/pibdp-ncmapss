@@ -1,0 +1,27 @@
+{
+ "LSTM": {
+  "trial": 1,
+  "params": {
+   "lr": 0.003,
+   "layers": 1,
+   "hidden": 128,
+   "epochs": 100,
+   "dropout": 0.2,
+   "L": 20
+  },
+  "tuning_mean_subset_rmse": 10.987008094787598
+ },
+ "CNN": {
+  "trial": 13,
+  "params": {
+   "lr": 0.001,
+   "layers": 3,
+   "kernel": 5,
+   "epochs": 100,
+   "dropout": 0.2,
+   "channels": 32,
+   "L": 10
+  },
+  "tuning_mean_subset_rmse": 12.252959251403809
+ }
+}
