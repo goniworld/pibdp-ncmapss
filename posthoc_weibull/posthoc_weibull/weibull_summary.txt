@@ -1,0 +1,65 @@
+Post-hoc sensor-free Weibull baseline and HI-age check 2026-10-26 01:42:18 (NOT pre-registered)
+
+Weibull fits (dev, censored MLE):
+   subset      k    lam  n_dev  n_cens
+ DS01-005 10.323 98.628      6       2
+ DS02-006  8.850 78.419      6       0
+ DS03-012  7.672 78.116      9       0
+     DS04  5.594 95.595      6       2
+     DS05  5.633 89.680      6       1
+     DS06  7.277 84.253      6       0
+     DS07 15.548 80.791      6       0
+DS08a-009  5.534 73.133      9       0
+DS08c-008 13.313 54.509      6       0
+
+Point accuracy (test, cycle level):
+                    model  pooled_rmse  mean_subset_rmse  clipped_rmse
+                PI-BDP V0        7.637             7.339         7.585
+Weibull-only (no sensors)        9.389             9.187         9.384
+
+Per-subset RMSE:
+           PI-BDP V0  Weibull-only
+subset                            
+DS01-005       7.575        10.870
+DS02-006       7.238        10.163
+DS03-012       7.800        10.547
+DS04           8.239         9.953
+DS05           5.099         8.388
+DS06           6.108         7.500
+DS07           9.003         9.285
+DS08a-009      9.726         9.446
+DS08c-008      5.267         6.531
+
+RMSE by life fraction:
+         PI-BDP V0  Weibull-only
+bin                             
+0-25%        9.105         9.503
+25-50%       8.009         9.467
+50-75%       6.468         9.309
+75-100%      6.712         9.281
+
+Raw interval metrics:
+             model  cov50  width50  cov80  width80  cov90  width90  iscore90  cov95  width95
+   PI-BDP V0 (raw)  0.462    8.506  0.709   16.084  0.776   20.535    39.355  0.826   24.326
+Weibull-only (raw)  0.472   14.811  0.784   27.770  0.852   35.155    44.625  0.893   41.218
+
+Paired hierarchical bootstrap RMSE(V0) - RMSE(Weibull-only), unadjusted:
+{
+ "diff": -1.7524821695959094,
+ "ci_lo": -3.1072343867828187,
+ "ci_hi": -0.2139424302262275,
+ "p_boot": 0.02748
+}
+
+HI vs age (per-unit Spearman means; partial Spearman given cycle, pooled within subset):
+           rho_hi_damage  rho_cycle_damage  partial_rho_hi_damage_given_cycle
+subset                                                                       
+DS01-005           0.970             0.988                              0.526
+DS02-006           0.965             0.989                              0.757
+DS03-012           0.973             0.990                              0.737
+DS04               0.965             0.992                              0.340
+DS05               0.959             0.988                              0.473
+DS06               0.945             0.993                              0.557
+DS07               0.961             0.994                              0.695
+DS08a-009          0.812             0.996                              0.305
+DS08c-008          0.984             0.993                              0.199
