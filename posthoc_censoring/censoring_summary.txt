@@ -1,0 +1,79 @@
+Post-hoc censoring sensitivity (100-cycle dev engines) 2026-10-26 05:41:41 (NOT pre-registered)
+Scenarios: V0 = protocol (censored); S1 = treated as failures everywhere; S2 = failures in Weibull only; S3 = excluded from dev fit.
+Calibrated intervals use the pre-registered V0 c_alpha unchanged (no recalibration).
+V0 reproduction vs saved Phase 3 predictions: max |median difference| = 0.000000
+
+Fits (subsets with censored dev engines):
+   subset          scenario  n_dev  n_cens cens_units  weib_k  weib_lam  D_mu  D_sd  n_sensors_kept
+ DS01-005                V0      6       2     [1, 3]  10.323    98.628 4.428 0.761            12.0
+ DS01-005     S1_all_failed      6       2     [1, 3]  15.740    95.680 4.474 1.741             4.0
+ DS01-005 S2_weibull_failed      6       2     [1, 3]  15.740    95.680 4.428 0.761            12.0
+ DS01-005       S3_excluded      4       2     [1, 3]  16.258    91.595 4.477 0.273            12.0
+ DS02-006               NaN      6       0        NaN     NaN       NaN   NaN   NaN             NaN
+ DS03-012               NaN      9       0        NaN     NaN       NaN   NaN   NaN             NaN
+     DS04                V0      6       2     [3, 5]   5.594    95.595 4.769 3.284             4.0
+     DS04     S1_all_failed      6       2     [3, 5]   8.240    90.578 4.678 3.327             4.0
+     DS04 S2_weibull_failed      6       2     [3, 5]   8.240    90.578 4.769 3.284             4.0
+     DS04       S3_excluded      4       2     [3, 5]  12.540    81.336 4.765 3.258             4.0
+     DS05                V0      6       1        [5]   5.633    89.680 4.657 0.248            11.0
+     DS05     S1_all_failed      6       1        [5]   6.667    87.761 4.621 0.296            11.0
+     DS05 S2_weibull_failed      6       1        [5]   6.667    87.761 4.657 0.248            11.0
+     DS05       S3_excluded      5       1        [5]   6.661    83.579 4.673 0.382            11.0
+     DS06               NaN      6       0        NaN     NaN       NaN   NaN   NaN             NaN
+     DS07               NaN      6       0        NaN     NaN       NaN   NaN   NaN             NaN
+DS08a-009               NaN      9       0        NaN     NaN       NaN   NaN   NaN             NaN
+DS08c-008               NaN      6       0        NaN     NaN       NaN   NaN   NaN             NaN
+
+Point and interval metrics (test, all scored cycles):
+         scenario  pooled_rmse  mean_subset_rmse  raw_cov90  raw_width90  raw_iscore90  cal_cov90  cal_width90  cal_iscore90
+               V0        7.637             7.339      0.776       20.535        39.355      0.929       37.068        43.127
+    S1_all_failed        7.494             7.213      0.781       18.824        37.281      0.928       34.114        40.175
+S2_weibull_failed        7.497             7.208      0.774       18.497        37.504      0.929       33.574        39.633
+      S3_excluded        7.796             7.373      0.736       16.477        42.255      0.887       30.081        38.411
+
+Per-subset RMSE:
+              V0  S1_all_failed  S2_weibull_failed  S3_excluded
+subset                                                         
+DS01-005   7.575          7.059              7.152        4.926
+DS02-006   7.238          7.238              7.238        7.238
+DS03-012   7.800          7.800              7.800        7.800
+DS04       8.239          7.389              7.494       10.899
+DS05       5.099          5.327              5.086        5.388
+DS06       6.108          6.108              6.108        6.108
+DS07       9.003          9.003              9.003        9.003
+DS08a-009  9.726          9.726              9.726        9.726
+DS08c-008  5.267          5.267              5.267        5.267
+
+RMSE by life fraction:
+            V0  S1_all_failed  S2_weibull_failed  S3_excluded
+bin                                                          
+0-25%    9.105          9.163              9.128        9.470
+25-50%   8.009          8.049              8.010        8.217
+50-75%   6.468          5.968              6.159        6.506
+75-100%  6.712          6.402              6.337        6.662
+
+Paired hierarchical bootstrap RMSE differences (negative = first model better):
+              comparison                                  family     diff    ci_lo   ci_hi  p_boot  p_holm
+      S1_all_failed - V0       scenario vs protocol (unadjusted)  -0.1433  -0.6639  0.2114  0.5562     NaN
+  S2_weibull_failed - V0       scenario vs protocol (unadjusted)  -0.1395  -0.6056  0.1712  0.4412     NaN
+        S3_excluded - V0       scenario vs protocol (unadjusted)   0.1590  -1.0638  1.8987  1.0000     NaN
+                 V0 - RF                V0 vs comparators (Holm)  -1.8178  -2.9415 -0.6079  0.0052  0.0104
+                 V0 - GB                V0 vs comparators (Holm)  -1.4698  -2.8217 -0.1165  0.0316  0.0316
+                V0 - MLP                V0 vs comparators (Holm) -10.0353 -18.7349 -1.7995  0.0003  0.0013
+               V0 - LSTM                V0 vs comparators (Holm)  -2.5103  -4.4906 -0.8392  0.0021  0.0062
+                V0 - CNN                V0 vs comparators (Holm) -12.9666 -27.1645 -2.7639  0.0000  0.0002
+      S1_all_failed - RF     S1_all_failed vs comparators (Holm)  -1.9611  -3.0186 -0.8655  0.0008  0.0016
+      S1_all_failed - GB     S1_all_failed vs comparators (Holm)  -1.6131  -2.8839 -0.3700  0.0091  0.0091
+     S1_all_failed - MLP     S1_all_failed vs comparators (Holm) -10.1787 -18.8246 -2.0478  0.0000  0.0002
+    S1_all_failed - LSTM     S1_all_failed vs comparators (Holm)  -2.6536  -4.6143 -0.9958  0.0005  0.0016
+     S1_all_failed - CNN     S1_all_failed vs comparators (Holm) -13.1099 -27.2991 -2.9685  0.0000  0.0000
+  S2_weibull_failed - RF S2_weibull_failed vs comparators (Holm)  -1.9573  -3.0142 -0.8590  0.0008  0.0016
+  S2_weibull_failed - GB S2_weibull_failed vs comparators (Holm)  -1.6092  -2.8853 -0.3572  0.0101  0.0101
+ S2_weibull_failed - MLP S2_weibull_failed vs comparators (Holm) -10.1748 -18.8247 -2.0352  0.0000  0.0002
+S2_weibull_failed - LSTM S2_weibull_failed vs comparators (Holm)  -2.6497  -4.6025 -1.0052  0.0005  0.0014
+ S2_weibull_failed - CNN S2_weibull_failed vs comparators (Holm) -13.1061 -27.2876 -2.9705  0.0000  0.0000
+        S3_excluded - RF       S3_excluded vs comparators (Holm)  -1.6588  -2.8719 -0.1152  0.0379  0.0758
+        S3_excluded - GB       S3_excluded vs comparators (Holm)  -1.3108  -2.6479  0.0807  0.0639  0.0758
+       S3_excluded - MLP       S3_excluded vs comparators (Holm)  -9.8764 -18.6951 -1.6829  0.0001  0.0003
+      S3_excluded - LSTM       S3_excluded vs comparators (Holm)  -2.3513  -4.1845 -0.9520  0.0002  0.0009
+       S3_excluded - CNN       S3_excluded vs comparators (Holm) -12.8076 -27.1404 -2.3737  0.0012  0.0036
