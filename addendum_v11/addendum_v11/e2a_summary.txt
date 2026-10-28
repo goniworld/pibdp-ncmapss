@@ -1,0 +1,16 @@
+Addendum v1.1 E2a (exploratory) 2026-10-28 12:34:19  addendum=https://github.com/goniworld/pibdp-ncmapss/commit/fb8db254edb1fa613a00c4c22b031c7c7515489d  CruiseBench=ef26d40fe06b75ce8f0d0159a05bbc5cb1be298a
+CruiseBench values: Table 6.1 of arXiv 2607.19380 as reported (best test epoch per run; optimistic).
+PI-BDP V0: frozen Phase 3 predictions; window at cycle t uses prediction after cycle t-1 minus 1; eta=5% caps; first-cycle windows excluded.
+Scored windows 606179; excluded first-cycle windows 8114; pooled window-weighted RMSE 4.3668
+
+                    LSTM     GRU    TCN  TSMixer  PI-BDP V0
+DS01-005          10.300   6.690  2.630    2.250      2.857
+DS02-006           6.170   2.020  2.520    2.410      2.766
+DS03-012           7.460   2.330  2.500    2.140      1.664
+DS04              13.970  13.900  6.980    4.720      4.985
+DS05              11.850   4.440  3.030    2.600      1.394
+DS06              13.690   7.210  3.050    2.610      3.418
+DS07              12.170   8.630  4.310    4.300      6.365
+DS08a-009         10.760   9.260  6.920    7.320      7.084
+DS08c-008          8.470   5.680  3.120    2.760      2.482
+mean (9 subsets)  10.538   6.684  3.896    3.457      3.669

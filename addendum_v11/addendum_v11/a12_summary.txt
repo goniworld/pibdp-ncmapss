@@ -1,0 +1,40 @@
+Addendum v1.1 A1/A2 (exploratory) 2026-10-28 12:31:29  addendum=https://github.com/goniworld/pibdp-ncmapss/commit/fb8db254edb1fa613a00c4c22b031c7c7515489d
+
+A1: clipped predictions (RUL <= 100 - t), paired hierarchical bootstrap, 100,000 resamples:
+         comparison  rmse_v0  rmse_comp    diff   ci_lo   ci_hi  p_boot  p_holm
+  V0 - RF (clipped)   7.5853     9.3036 -1.7183 -2.8946 -0.5323  0.0066  0.0132
+  V0 - GB (clipped)   7.5853     8.9416 -1.3564 -2.7220 -0.0787  0.0369  0.0369
+ V0 - MLP (clipped)   7.5853    11.0645 -3.4792 -5.9695 -1.1488  0.0014  0.0057
+V0 - LSTM (clipped)   7.5853    10.0289 -2.4437 -4.3122 -0.8291  0.0021  0.0062
+ V0 - CNN (clipped)   7.5853    11.4918 -3.9066 -5.4877 -2.0703  0.0001  0.0005
+
+A2: calibrated 90% interval (c90 = 1.8425); overall coverage 0.9285, fraction true RUL < LB90 0.0269 (nominal 0.05), raw q05 0.0905
+
+By subset:
+             n   cov90  below_LB90  below_q05_raw  iscore90
+subset                                                     
+DS01-005   341  1.0000      0.0000         0.1437   43.4936
+DS02-006   202  0.8366      0.1634         0.5545   29.4619
+DS03-012   438  0.9954      0.0000         0.0411   30.5864
+DS04       344  1.0000      0.0000         0.0000   69.9589
+DS05       327  1.0000      0.0000         0.0153   40.6780
+DS06       322  0.9441      0.0559         0.0994   39.5586
+DS07       344  0.7238      0.0000         0.0000   46.5641
+DS08a-009  383  0.9191      0.0731         0.1305   58.8394
+DS08c-008  237  0.8692      0.0000         0.0000   16.3260
+
+Lowest-coverage engines:
+   subset  unit  n  cov90  below_LB90  below_q05_raw  iscore90
+     DS07     9 96 0.0104      0.0000         0.0000   97.6377
+ DS02-006    14 76 0.5658      0.4342         0.5263   42.8543
+DS08c-008     8 62 0.6935      0.0000         0.0000   18.7553
+DS08a-009    12 58 0.7586      0.2414         0.3966   78.1209
+     DS06     7 80 0.7750      0.2250         0.3000   56.1666
+
+By life bin:
+            n   cov90  below_LB90  below_q05_raw  iscore90
+life_bin                                                  
+0-25%     718  0.9582      0.0000         0.0251   59.1237
+25-50%    741  0.9460      0.0000         0.0256   50.7521
+50-75%    730  0.9479      0.0192         0.1315   33.6181
+75-100%   749  0.8638      0.0868         0.1776   29.5172
