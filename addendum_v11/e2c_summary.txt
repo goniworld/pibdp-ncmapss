@@ -1,0 +1,29 @@
+Addendum v1.1 E2c scoring (exploratory) 2026-10-29 00:14:23  run=https://github.com/goniworld/pibdp-ncmapss/commit/da751a9646d3d4cc993f56e9abcd3b0787916674
+Seeds per model: 5; windows scored 606179; first-cycle windows excluded 8114
+
+Main scoring (eta=5% caps, CruiseBench cruise windows, final-epoch models, seed-mean):
+                  model  pooled_rmse  mean_subset_rmse  DS01-005  DS02-006  DS03-012   DS04  DS05   DS06  DS07  DS08a-009  DS08c-008  seed_sd
+              PI-BDP V0        4.367             3.669     2.857     2.766     1.664  4.985 1.394  3.418 6.365      7.084      2.482      NaN
+                   LSTM        7.882             6.485     2.935     2.734     3.051 13.997 3.561 11.132 7.853      8.584      4.515      NaN
+                    GRU        5.316             4.037     2.352     2.817     2.415 10.725 2.358  1.967 4.231      7.074      2.393      NaN
+                    TCN        4.204             3.559     2.424     2.252     2.369  5.538 2.317  2.517 4.571      7.043      3.000      NaN
+                TSMixer        4.202             3.439     2.588     2.410     2.130  4.082 2.565  2.324 4.190      8.076      2.586      NaN
+   LSTM (per-seed mean)        9.029               NaN       NaN       NaN       NaN    NaN   NaN    NaN   NaN        NaN        NaN    1.229
+    GRU (per-seed mean)        5.801               NaN       NaN       NaN       NaN    NaN   NaN    NaN   NaN        NaN        NaN    0.799
+    TCN (per-seed mean)        4.405               NaN       NaN       NaN       NaN    NaN   NaN    NaN   NaN        NaN        NaN    0.270
+TSMixer (per-seed mean)        4.350               NaN       NaN       NaN       NaN    NaN   NaN    NaN   NaN        NaN        NaN    0.085
+
+Paired hierarchical bootstrap RMSE(V0) - RMSE(model), 100,000 resamples:
+  comparison    diff   ci_lo   ci_hi  p_boot                            wording
+   V0 - LSTM -3.5149 -6.3277 -0.9124  0.0001 PI-BDP more accurate (exploratory)
+    V0 - GRU -0.9493 -3.1955  1.1014  0.5671                         comparable
+    V0 - TCN  0.1630 -0.5472  1.0123  0.7840                         comparable
+V0 - TSMixer  0.1652 -0.6913  1.3435  0.7820                         comparable
+
+Secondary, cycle-level uncapped (descriptive):
+    model  cycle_rmse_uncapped  n_cycles
+PI-BDP V0                7.663      2726
+     LSTM               21.599      2726
+      GRU               19.112      2726
+      TCN               18.505      2726
+  TSMixer               17.949      2726
