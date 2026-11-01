@@ -1,0 +1,11 @@
+{
+ "ws3_summary.txt": "81e92da4a10d37c786161878c68596dd3964fc9134ffef0ef62ba23ed21eb372",
+ "ws3a_constants.json": "56e9cb46e80915d25d551788f94aa3df402c9dea0e3e53a8b720e90257e6c0da",
+ "ws3a_dev_louo_all.csv": "b6816464e90cceb1403ed1bccc171bb59a6279c9a605ce453fd5750b9bf2c42b",
+ "ws3a_dev_louo_subset.csv": "21b89f0f15db6e02e8e4c6d6c5ffc40fda6d2622632741b7dde3c064042e7848",
+ "ws3a_test_all.csv": "2b210879660f34500f53cad1a8fef5a8eb40a6a2d32935b1a04b723d6e32efc4",
+ "ws3a_test_lifebin.csv": "4208fd9a2ebde6af57f3787e8a2689dfc083713a7741a9541be5141861909ee0",
+ "ws3a_test_subset.csv": "c7ba2aefeb2ec7e6341da3c23c2a298819a5cf218e551ec2883d5e524fc04297",
+ "ws3b_rules.csv": "d1850c75f8da895040d46d7d2fbaf8c9c7a914a79800fdfc5ff9aeedac494f48",
+ "ws3b_wording.csv": "d66f31e8cec07e9c375eb392485f951c82303dd3ecf739e0270aa7eec8d8cf14"
+}

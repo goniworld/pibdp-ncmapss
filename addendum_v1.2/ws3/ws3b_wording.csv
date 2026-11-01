@@ -1,0 +1,23 @@
+study,metric,comparison,R0,R1,R2,changed
+E2b figshare,interval score (90%),V0 (calibrated) - DE,comparable,comparable,comparable,False
+E2b figshare,interval score (90%),V0 (calibrated) - FO,comparable,comparable,comparable,False
+E2b figshare,interval score (90%),V0 (calibrated) - HNN,comparable,comparable,comparable,False
+E2b figshare,interval score (90%),V0 (calibrated) - LRT,comparable,comparable,comparable,False
+E2b figshare,interval score (90%),V0 (calibrated) - MCD,comparable,comparable,comparable,False
+E2b figshare,interval score (90%),V0 (calibrated) - RAD,comparable,comparable,comparable,False
+E2b figshare,pooled RMSE,V0 - DE,PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),False
+E2b figshare,pooled RMSE,V0 - FO,PI-BDP more accurate (exploratory),comparable,PI-BDP more accurate (exploratory),True
+E2b figshare,pooled RMSE,V0 - HNN,PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),False
+E2b figshare,pooled RMSE,V0 - LRT,PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),False
+E2b figshare,pooled RMSE,V0 - MCD,PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),False
+E2b figshare,pooled RMSE,V0 - RAD,PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),False
+E2c CruiseBench,pooled RMSE,V0 - GRU,comparable,comparable,comparable,False
+E2c CruiseBench,pooled RMSE,V0 - LSTM,PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),PI-BDP more accurate (exploratory),False
+E2c CruiseBench,pooled RMSE,V0 - TCN,comparable,comparable,comparable,False
+E2c CruiseBench,pooled RMSE,V0 - TSMixer,comparable,comparable,comparable,False
+E2c bayesrul,interval score (90%),V0 (calibrated) - DE,comparable,comparable,comparable,False
+E2c bayesrul,interval score (90%),V0 (calibrated) - HNN,comparable,comparable,comparable,False
+E2c bayesrul,interval score (90%),V0 (calibrated) - MCD,comparable,comparable,comparable,False
+E2c bayesrul,pooled RMSE,V0 - DE,comparable,comparable,comparable,False
+E2c bayesrul,pooled RMSE,V0 - HNN,comparable,comparable,comparable,False
+E2c bayesrul,pooled RMSE,V0 - MCD,PI-BDP more accurate (exploratory),comparable,comparable,True
