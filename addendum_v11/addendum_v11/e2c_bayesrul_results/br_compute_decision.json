@@ -1,0 +1,20 @@
+{
+ "sec_per_epoch": {
+  "HNN": 18.629884839057922,
+  "MCD": 93.09591889381409
+ },
+ "plan_epochs": 400,
+ "budget_gpu_h": 40.0,
+ "gpu": "Tesla T4",
+ "estimates_gpu_h": {
+  "(5, 5, 10)": 78.6,
+  "(3, 5, 10)": 76.1,
+  "(3, 3, 10)": 55.4,
+  "(3, 3, 6)": 47.2
+ },
+ "n_rep_hnn": 3,
+ "n_mcd": 3,
+ "n_hnn": 6,
+ "over_budget_even_after_reduction": true,
+ "rule": "estimated GPU-h > 40 -> reduce: replication HNN 5->3, MCD 5->3, HNN 10->6 (timing only)"
+}

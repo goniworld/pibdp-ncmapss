@@ -1,0 +1,52 @@
+Addendum v1.1 E2c bayesrul scoring (exploratory) 2026-11-01 11:39:09  run=https://github.com/goniworld/pibdp-ncmapss/commit/64ae784b5081259bfc23446591c10ea3978efe95
+bayesrul 2943f4d; runs: HNN 6, MCD 3, DE 5 (from HNN); windows scored 253039; first-cycle windows excluded 3280
+
+Replication check (DS01-DS05 pooled, HNN, all test windows):
+                                     0
+model                  HNN (DS01-DS05)
+paper_mean                       8.279
+paper_sd                         0.181
+ours_mean                     8.280343
+ours_sd                       0.264193
+n_runs                               3
+runs                 8.354 7.987 8.500
+tolerance                        0.362
+reproduced                        True
+counts_match_table3               True
+
+Point predictions (healthy-phase capped labels, 0.1 Hz windows):
+    model  pooled_rmse  mean_subset_rmse  DS01-005  DS02-006  DS03-012   DS04  DS05  DS06   DS07  DS08a-009  DS08c-008
+PI-BDP V0        5.898             5.269     4.190     3.965     3.826  6.304 3.091 4.492 10.503      7.256      3.792
+      HNN        7.185             6.387     7.081     3.259     6.086 10.959 5.114 5.324 10.318      5.207      4.136
+      MCD        7.856             6.886     7.984     3.103     6.264 12.350 5.467 5.404 11.168      5.888      4.342
+       DE        7.178             6.381     7.064     3.261     6.083 10.951 5.112 5.300 10.297      5.216      4.149
+
+Probabilistic (PI-BDP calibrated with c90=1.8424733212808164; multi-run methods averaged per window over runs):
+                    model  cov90  width90  iscore90  pinball9
+                PI-BDP V0  0.927   22.888    28.911     1.039
+PI-BDP V0 (raw quantiles)  0.819   12.529    29.113     1.039
+                      HNN  0.896   18.839    24.495     1.166
+                      MCD  0.953   24.144    26.462     1.255
+                       DE  0.930   19.766    22.393     1.104
+
+Paired hierarchical bootstrap V0 - model, 100,000 resamples:
+              metric            comparison    diff   ci_lo   ci_hi  p_boot                            wording
+         pooled RMSE              V0 - HNN -1.2874 -3.2253  0.5322  0.1798                         comparable
+interval score (90%) V0 (calibrated) - HNN  4.4167 -1.4796 11.0918  0.1716                         comparable
+         pooled RMSE              V0 - MCD -1.9580 -4.1506 -0.0176  0.0474 PI-BDP more accurate (exploratory)
+interval score (90%) V0 (calibrated) - MCD  2.4488 -3.7201 10.3593  0.5592                         comparable
+         pooled RMSE               V0 - DE -1.2796 -3.2182  0.5362  0.1829                         comparable
+interval score (90%)  V0 (calibrated) - DE  6.5187 -0.0010 14.1297  0.0500                         comparable
+
+Original bayesrul metrics (compute_metrics, all test windows, mean/std over runs):
+method  mae_mean  mae_std  rmse_mean  rmse_std  nll_mean  nll_std  rmsce_mean  rmsce_std  sharp_mean  sharp_std
+    DE     5.758    0.019      7.764     0.022     2.314    0.003       0.037      0.002       9.004      0.050
+   HNN     5.980    0.077      8.120     0.124  1121.678 1735.438       0.011      0.007       8.688      0.229
+   MCD     6.195    0.103      8.495     0.205     2.454    0.024       0.085      0.005      11.140      0.074
+
+Secondary, cycle-level uncapped (descriptive):
+    model  cycle_rmse_uncapped  n_cycles
+PI-BDP V0                7.637      2938
+      HNN               11.325      2938
+      MCD               12.044      2938
+       DE               11.324      2938

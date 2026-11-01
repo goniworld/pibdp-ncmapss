@@ -1,0 +1,16 @@
+{
+ "train": 398281,
+ "val": 44253,
+ "test": 256319,
+ "extra_rows_from_piecewise_merge": {
+  "N-CMAPSS_DS01-005": 2,
+  "N-CMAPSS_DS02-006": 0,
+  "N-CMAPSS_DS03-012": 14,
+  "N-CMAPSS_DS04": 0,
+  "N-CMAPSS_DS05": 0,
+  "N-CMAPSS_DS06": 0,
+  "N-CMAPSS_DS07": 0,
+  "N-CMAPSS_DS08a-009": 14,
+  "N-CMAPSS_DS08c-008": 4
+ }
+}

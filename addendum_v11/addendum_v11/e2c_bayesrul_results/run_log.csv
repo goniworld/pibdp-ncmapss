@@ -1,0 +1,13 @@
+tag,method,seed,run,minutes,resumed,best_ckpt,gpu,finished
+rep,HNN,1,000,36.727568888664244,False,epoch_63-step_60992.ckpt,Tesla T4,2026-10-30 01:38:57
+rep,HNN,2,001,70.75796818335851,False,epoch_173-step_165822.ckpt,Tesla T4,2026-10-30 02:49:42
+rep,HNN,3,002,81.06358831723531,False,epoch_205-step_196318.ckpt,Tesla T4,2026-10-30 04:10:46
+main,HNN,1,000,125.90229483445485,False,epoch_194-step_310830.ckpt,Tesla T4,2026-10-30 06:16:42
+main,HNN,2,001,91.2847210963567,False,epoch_128-step_205626.ckpt,Tesla T4,2026-10-30 07:47:59
+main,HNN,3,002,76.97045751810074,False,epoch_100-step_160994.ckpt,Tesla T4,2026-10-30 09:04:57
+main,HNN,4,003,112.05218197902043,False,epoch_169-step_270980.ckpt,Tesla T4,2026-10-30 10:57:01
+main,HNN,5,004,110.04828724066417,False,epoch_162-step_259822.ckpt,Tesla T4,2026-10-30 12:47:04
+main,HNN,6,005,72.69354865550994,True,epoch_122-step_196062.ckpt,Tesla T4,2026-10-31 13:32:11
+main,MCD,1,000,383.3821214795113,False,epoch_176-step_704991.ckpt,Tesla T4,2026-10-31 19:55:34
+main,MCD,2,001,361.10334324042003,False,epoch_168-step_673127.ckpt,Tesla T4,2026-11-01 01:56:40
+main,MCD,3,002,453.24594397942224,False,epoch_221-step_884226.ckpt,Tesla T4,2026-11-01 09:29:55

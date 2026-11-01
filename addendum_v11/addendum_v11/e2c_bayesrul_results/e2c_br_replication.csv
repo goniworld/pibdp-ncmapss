@@ -1,0 +1,2 @@
+model,paper_mean,paper_sd,ours_mean,ours_sd,n_runs,runs,tolerance,reproduced,counts_match_table3
+HNN (DS01-DS05),8.279,0.181,8.28034294426606,0.26419334469842937,3,8.354 7.987 8.500,0.362,True,True
