@@ -1,0 +1,60 @@
+Addendum v1.1 E2b figshare comparison (exploratory) 2026-11-01 12:43:27  run=https://github.com/goniworld/pibdp-ncmapss/commit/689d2791daa1a1dbfcc858417d55ad9e3c02c604
+Data: Basora et al., BayesRUL benchmark results, figshare doi:10.6084/m9.figshare.24080643 (CC BY 4.0); zip sha256 536f048ae56677b28eb03eafad69ff6ed7a64465a1697beabb99f82768230802; results/ncmapss/cache/test/predictions.parquet sha256 66f1f858271a7e648f566ae8c9c0ae7568d3aefe0a003e5a1eaaf685fa157249; duplicate rows dropped 0
+DS01-DS05 test windows 144015; scored 142357; first-cycle windows excluded 1658
+
+Check against paper Table 7 (all test windows, uncapped, as published):
+method  rmse_mean  rmse_sd  nll_mean  nll_sd  n  paper_rmse  paper_rmse_sd  paper_nll
+    DE      8.163    0.136     2.372   0.017  5       8.163          0.136      2.372
+    FO      8.235    0.113     5.007   0.465  5       8.235          0.113      5.007
+   HNN      9.331    2.236     2.620   0.140 10       8.279          0.181      2.516
+   LRT      8.551    0.122     4.553   2.008  5       8.551          0.122      4.553
+   MCD      8.466    0.216     2.396   0.024  5       8.466          0.216      2.396
+   RAD      8.619    0.100     3.181   0.533  5       8.619          0.100      3.181
+
+Point predictions (healthy-phase capped labels, 0.1 Hz windows):
+                    model  pooled_rmse  mean_subset_rmse  DS01-005  DS02-006  DS03-012   DS04  DS05
+                PI-BDP V0        4.548             4.276     4.190     3.965     3.826  6.304 3.091
+                      HNN        7.368             6.285     6.285     3.178     5.550 11.342 5.071
+                      MCD        7.179             6.229     5.970     3.483     5.526 10.899 5.266
+                       DE        7.239             6.191     6.129     3.182     5.515 11.108 5.023
+                      LRT        6.928             5.924     5.386     3.241     5.402 10.703 4.888
+                       FO        6.485             5.667     5.139     3.274     5.336  9.659 4.929
+                      RAD        7.146             6.104     5.617     3.360     5.492 11.087 4.964
+HNN (8 runs, descriptive)        6.653             5.796     5.499     3.252     5.406  9.930 4.891
+
+Probabilistic (PI-BDP calibrated with c90=1.8424733212808164; multi-run methods averaged per window over runs):
+                    model  cov90  width90  iscore90  pinball9
+                PI-BDP V0  0.995   25.806    26.024     0.730
+PI-BDP V0 (raw quantiles)  0.902   14.303    17.533     0.730
+                      HNN  0.881   20.099    26.845     1.276
+                      MCD  0.975   22.982    23.860     1.136
+                       DE  0.961   22.506    23.817     1.136
+                      LRT  0.839   17.821    23.688     1.124
+                       FO  0.816   16.430    23.444     1.072
+                      RAD  0.868   18.823    23.614     1.139
+HNN (8 runs, descriptive)  0.877   17.318    22.737     1.078
+
+Paired hierarchical bootstrap V0 - method (all published runs), 100,000 resamples:
+              metric            comparison    diff   ci_lo   ci_hi  p_boot                            wording
+         pooled RMSE              V0 - HNN -2.8205 -4.7308 -0.6417  0.0105 PI-BDP more accurate (exploratory)
+interval score (90%) V0 (calibrated) - HNN -0.8217 -5.4959  3.5039  0.7767                         comparable
+         pooled RMSE              V0 - MCD -2.6315 -4.2428 -0.8156  0.0055 PI-BDP more accurate (exploratory)
+interval score (90%) V0 (calibrated) - MCD  2.1632 -2.3015  7.9429  0.5766                         comparable
+         pooled RMSE               V0 - DE -2.6912 -4.5413 -0.6002  0.0110 PI-BDP more accurate (exploratory)
+interval score (90%)  V0 (calibrated) - DE  2.2070 -1.8329  6.8860  0.3811                         comparable
+         pooled RMSE              V0 - LRT -2.3804 -4.0645 -0.4353  0.0145 PI-BDP more accurate (exploratory)
+interval score (90%) V0 (calibrated) - LRT  2.3355 -4.0136  8.4810  0.4923                         comparable
+         pooled RMSE               V0 - FO -1.9367 -3.3215 -0.3638  0.0173 PI-BDP more accurate (exploratory)
+interval score (90%)  V0 (calibrated) - FO  2.5798 -5.8964 10.9948  0.5783                         comparable
+         pooled RMSE              V0 - RAD -2.5986 -4.3895 -0.5963  0.0093 PI-BDP more accurate (exploratory)
+interval score (90%) V0 (calibrated) - RAD  2.4095 -3.5906  8.3164  0.4556                         comparable
+
+Secondary, cycle-level uncapped (descriptive):
+    model  cycle_rmse_uncapped  n_cycles
+PI-BDP V0                7.325      1652
+      HNN               11.634      1652
+      MCD               11.300      1652
+       DE               11.460      1652
+      LRT               11.102      1652
+       FO               10.793      1652
+      RAD               11.128      1652
