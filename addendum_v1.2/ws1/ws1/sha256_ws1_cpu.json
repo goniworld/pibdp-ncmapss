@@ -1,0 +1,20 @@
+{
+ "raw/DS01-005.csv.gz": "6732bcba5d4478722fd747fc2aa3903f4632a70d81d160cf4225cf5bc0601d43",
+ "raw/DS02-006.csv.gz": "c27cb0e1d07b5a79090cd683385a208d6ff5ddeca836cb885c4973688aa0b471",
+ "raw/DS03-012.csv.gz": "217b7fa57d827348d0a769a63bf596136332aae8d81879798bc1d39dd51970e1",
+ "raw/DS04.csv.gz": "5682c9f4fca3cfb45dc9531531696fe83cb402decbfe4b1ae86bc41cf296278a",
+ "raw/DS05.csv.gz": "06974ad731ef4d7b61df9d873a5bde67433c70cf3aa69c6545140d2100184743",
+ "raw/DS06.csv.gz": "28c7fddc6581ce495a313367887d5dc162931876e11dab1592a4338d3748ea5c",
+ "raw/DS07.csv.gz": "47e86501cbec46bfbd66e866cdd7e4ec7f14a13e86dfe0f9a4adcfa41d3de8a4",
+ "raw/DS08a-009.csv.gz": "a5f0872c4ab6d5e9b15330758b9ca5e8d0589c39ee06d24ad1c5cc34c3b1d7be",
+ "raw/DS08c-008.csv.gz": "4eba4f2b42272764c2cf2d437468ef4de46644a9bd96be5a9b706e9bf2dcd910",
+ "ws1_code_sha256.json": "d4584893d91138ded49f739b71f40bf0dfa241f6bff5fadfd5e150b3b97768a0",
+ "ws1_cpu_summary.txt": "6075e7fbe0efe6b9a8c70b0ffcde197d37a70c76e2cf412ad3a5ae450669af91",
+ "ws1_curve_cpu.csv": "f3f591204a617265640fdeb21d942f1970b51ed29683eced6cd958e5af06e18f",
+ "ws1_curve_cpu_subset.csv": "b4d00fc9b3e4538fdc06638dd6db7b9a95d2ad5b4db624307adfec8bac59cb31",
+ "ws1_dev_windows.csv": "bade18925d629b99a71b9291e6bbad864341214bdf6f0708e7e465fefde9c278",
+ "ws1_draw_scores.csv": "725bf23c0e61d0f6902254dff0b112d26313afabade0f40ab3afd02124bbc7c6",
+ "ws1_draws.csv": "27420d20cf29034b9a903fd040f35a3f02698e8cdcaf864935fa6473148c0b2e",
+ "ws1_engine_scores.csv": "b4fd685ec7ad5691b245f7dae575b7e37dfc7b9021f28e11d70603191454196b",
+ "ws1_fallbacks.csv": "cf9643357ff77f9986fa4bf37e19ac8dd0a3fca1e622035de16ed43ead08baf9"
+}
