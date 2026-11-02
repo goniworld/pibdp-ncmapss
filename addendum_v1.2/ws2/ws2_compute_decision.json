@@ -1,0 +1,8 @@
+{
+ "cores": 2,
+ "sec_per_10_reps_parallel": 39.41594839096069,
+ "est_hours_200": 39.41594839096069,
+ "budget_h": 24.0,
+ "n_rep": 100,
+ "rule": "v1.2 3.3: >24 h -> 100 reps (timing only)"
+}
