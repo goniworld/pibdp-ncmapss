@@ -1,0 +1,33 @@
+{
+ "gpu": "Tesla T4",
+ "sec_per_window_epoch": {
+  "TSMixer": 2.1989025728768385e-05,
+  "TCN": 2.612527837151855e-05,
+  "pool": 2.2819113981270585e-05
+ },
+ "estimates": {
+  "full": {
+   "gpu_h": 32.7,
+   "target_fits_per_model": 415,
+   "pool_fits": 55
+  },
+  "pool27": {
+   "gpu_h": 27.2,
+   "target_fits_per_model": 415,
+   "pool_fits": 38
+  },
+  "draws2": {
+   "gpu_h": 23.4,
+   "target_fits_per_model": 295,
+   "pool_fits": 38
+  },
+  "no_m3": {
+   "gpu_h": 20.0,
+   "target_fits_per_model": 201,
+   "pool_fits": 38
+  }
+ },
+ "plan": "full",
+ "over_budget": false,
+ "rule": "v1.2 2.6: >40 GPU-h -> pool 27, draws 2, drop m=3 (timing only)"
+}
