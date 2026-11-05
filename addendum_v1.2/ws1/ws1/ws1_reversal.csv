@@ -1,0 +1,4 @@
+comparison,V0_more_accurate_at,first_m_not_more_accurate,wording_by_m
+V0 - GB,[],2,"{'2': 'comparable', '3': 'comparable', '5': 'comparable', 'all': 'comparable'}"
+V0 - TSMixer,[],2,"{'2': 'comparable', '3': 'comparable', '5': 'comparable', 'all': 'comparable'}"
+V0 - TCN,[],2,"{'2': 'comparable', '3': 'comparable', '5': 'comparable', 'all': 'comparable'}"

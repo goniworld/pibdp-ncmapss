@@ -1,0 +1,10 @@
+subset,heldout,m,draw,variant,nan_cycles,n_cycles,first_nan_cycle,note
+DS05,4,2,0,V0,41,99,58,diagonal covariance
+DS05,4,2,0,meld0.5,41,99,58,diagonal covariance
+DS05,4,2,0,meld1,41,99,58,diagonal covariance
+DS06,5,2,0,V0,40,99,58,diagonal covariance
+DS06,5,2,0,meld0.5,40,99,58,diagonal covariance
+DS06,5,2,0,meld1,40,99,58,diagonal covariance
+DS08c-008,6,2,1,V0,2,60,54,diagonal covariance
+DS08c-008,6,2,1,meld0.5,2,60,54,diagonal covariance
+DS08c-008,6,2,1,meld1,2,60,54,diagonal covariance
