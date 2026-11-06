@@ -1,0 +1,6 @@
+DS07 calibrated 90% interval check (descriptive; stored v1.0 test predictions test_PI-BDP_V0_DS07.csv.gz; computed 2026-11-06)
+c90 = 1.8425, eps = 0.5: coverage 0.7238, above upper 0.2762, below lower 0.0
+All 95 missed cycles: unit 9 (95 of 96 cycles missed); units 7, 8, 10 coverage 1.0
+Unit 9 mean (median - true) = -15.1 cycles; misses lie a median 3.6 cycles (IQR 3.1-4.5) above the upper bound
+Coverage by constant: 1.38 0.724 | 1.6 0.724 | 1.84 0.724 | 2.0 0.727 | 3 0.974 | 4 0.980 | 5 0.985 | 8 0.997
+Constant needed for 90% DS07 coverage: 2.46
