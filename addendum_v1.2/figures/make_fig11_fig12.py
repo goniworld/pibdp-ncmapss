@@ -42,11 +42,12 @@ for j,(g,title) in enumerate(scen):
         if met=='cov90':
             o=T[(T.scen==g)&(T.method=='oracle')].set_index('m').reindex(ms)[met]
             ax.plot(ms,o.values,color=COL['gray'],lw=1.0,ls='-',label='Oracle'); ax.set_ylim(0.25,0.95)
+            ax.axhline(0.9,color=COL['ink'],lw=0.6,ls='-.',label='Nominal 90%')
             ax.set_title(title,loc='left')
         ax.set_xscale('log'); ax.set_xticks(ms,[str(v) for v in ms]); ax.minorticks_off()
         if j==0: ax.set_ylabel(ylab)
         if i==1: ax.set_xlabel('Training engines m')
-h,l=axs[0,0].get_legend_handles_labels(); fig.legend(h,l,loc='lower center',ncol=5,bbox_to_anchor=(0.5,-0.04))
+h,l=axs[0,0].get_legend_handles_labels(); fig.legend(h,l,loc='lower center',ncol=6,bbox_to_anchor=(0.5,-0.04))
 fig.tight_layout(rect=(0,0.05,1,1))
 save(fig,'Fig12_semisynthetic')
 print('ok')
