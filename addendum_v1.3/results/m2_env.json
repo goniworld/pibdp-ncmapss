@@ -1,0 +1,10 @@
+{
+ "cpu": "model name\t: Intel(R) Xeon(R) CPU @ 2.20GHz",
+ "n_cpu": 2,
+ "python": "3.13.18",
+ "numpy": "2.4.6",
+ "pandas": "2.2.3",
+ "scipy": "1.16.3",
+ "sklearn": "1.6.1",
+ "gpu_visible": false
+}

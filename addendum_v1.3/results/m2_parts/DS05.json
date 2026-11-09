@@ -1,0 +1,61 @@
+{
+ "timing": [
+  {
+   "subset": "DS05",
+   "model": "PI-BDP V0",
+   "device": "CPU",
+   "n_train_units": 6,
+   "n_cycles": 327,
+   "fit_s": 0.876666087999979,
+   "fit_s_runs": [
+    0.877,
+    0.786,
+    1.184
+   ],
+   "test_delta_s": 0.43707176099997014,
+   "predict_s": 2.18476147399997,
+   "predict_ms_per_cycle": 6.681227749235382
+  },
+  {
+   "subset": "DS05",
+   "model": "RF",
+   "device": "CPU",
+   "n_train_units": 5,
+   "n_train_rows": 391,
+   "n_cycles": 327,
+   "fit_s": 0.9620873679999704,
+   "predict_s": 0.06768420100002004,
+   "predict_ms_per_cycle": 0.2069853241590827
+  },
+  {
+   "subset": "DS05",
+   "model": "GB",
+   "device": "CPU",
+   "n_train_units": 5,
+   "n_train_rows": 391,
+   "n_cycles": 327,
+   "fit_s": 0.361710417999916,
+   "predict_s": 0.004406392000078085,
+   "predict_ms_per_cycle": 0.013475204893205155
+  },
+  {
+   "subset": "DS05",
+   "model": "MLP",
+   "device": "CPU",
+   "n_train_units": 5,
+   "n_train_rows": 391,
+   "n_cycles": 327,
+   "fit_s": 1.3841405699999996,
+   "predict_s": 0.0013673859999698834,
+   "predict_ms_per_cycle": 0.0041816085625990315
+  }
+ ],
+ "repro": {
+  "subset": "DS05",
+  "n_stored": 327,
+  "n_new": 327,
+  "n_matched": 327,
+  "max_abs_q500": 7.105427357601002e-15,
+  "max_abs_q050": 7.105427357601002e-15
+ }
+}

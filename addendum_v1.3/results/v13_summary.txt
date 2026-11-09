@@ -1,0 +1,90 @@
+Addendum v1.3 (exploratory) 2026-11-09 00:35:15 | commit: https://github.com/goniworld/pibdp-ncmapss/commit/fcd77aa1b445e43972c75da4f22d9fc312170478
+M1 expected-rate rule: L=5, dt=1, Dp=2.0, rhos=[2, 5, 10, 20, 50], calibration constants={'50': 1.5511199087332235, '80': 1.584242838316265, '90': 1.8424733212808164, '95': 2.0857639458801254}, eps=0.5
+Reproduction check (rho=10): {"PI-BDP q05 (calibrated)": 51.928, "TBM (Weibull optimal age)": 41.981, "GB": 47.599} | tuned GB tau={2: 12, 5: 21, 10: 21, 20: 39, 50: 39}
+
+Downtime per 1000 cycles by rho:
+rho                            2        5        10       20        50
+policy                                                                
+CM                         53.097  132.743  265.487  530.973  1327.434
+TBM (Weibull optimal age)  35.441   37.736   41.981   45.748    51.793
+Oracle                     26.906   26.906   26.906   26.906    26.906
+PI-BDP q05 (raw)           32.484   43.559   62.016   98.929   209.671
+PI-BDP q05 (calibrated)    33.045   40.126   51.928   75.531   146.341
+GB tuned                   32.692   39.248   47.599   52.917    52.917
+ER-raw                     31.502   41.214   57.165   87.753   179.321
+ER-cal                     32.258   36.165   38.424   44.343    49.587
+
+Unplanned failure rate by rho:
+rho                           2      5      10     20     50
+policy                                                      
+CM                         1.000  1.000  1.000  1.000  1.000
+TBM (Weibull optimal age)  0.128  0.000  0.000  0.000  0.000
+Oracle                     0.000  0.000  0.000  0.000  0.000
+PI-BDP q05 (raw)           0.128  0.128  0.128  0.128  0.128
+PI-BDP q05 (calibrated)    0.077  0.077  0.077  0.077  0.077
+GB tuned                   0.154  0.051  0.051  0.000  0.000
+ER-raw                     0.103  0.103  0.103  0.103  0.103
+ER-cal                     0.103  0.026  0.000  0.000  0.000
+
+Mean unused life by rho:
+rho                           2      5      10     20     50
+policy                                                      
+CM                         0.000  0.000  0.000  0.000  0.000
+TBM (Weibull optimal age)  0.147  0.290  0.362  0.414  0.483
+Oracle                     0.014  0.014  0.014  0.014  0.014
+PI-BDP q05 (raw)           0.075  0.075  0.075  0.075  0.075
+PI-BDP q05 (calibrated)    0.130  0.130  0.130  0.130  0.130
+GB tuned                   0.064  0.187  0.187  0.503  0.503
+ER-raw                     0.070  0.089  0.102  0.103  0.103
+ER-cal                     0.092  0.190  0.305  0.392  0.458
+
+rho = 10, hierarchical bootstrap 95% CI:
+                   policy  downtime      lo      hi
+                       CM   265.487 243.181 291.723
+TBM (Weibull optimal age)    41.981  37.313  47.059
+                   Oracle    26.906  24.617  29.604
+         PI-BDP q05 (raw)    62.016  28.443 106.555
+  PI-BDP q05 (calibrated)    51.928  29.526  85.890
+                 GB tuned    47.599  29.541  86.592
+                   ER-raw    57.165  28.881  98.621
+                   ER-cal    38.424  33.228  45.561
+
+                        comparison        role    diff      lo     hi                   wording
+  ER-cal - PI-BDP q05 (calibrated) primary (a) -13.504 -46.654  8.452 no significant difference
+ER-cal - TBM (Weibull optimal age) primary (b)  -3.557  -9.359  3.131 no significant difference
+                 ER-cal - GB tuned primary (c)  -9.176 -43.493  8.601 no significant difference
+  ER-raw - PI-BDP q05 (calibrated)   secondary   5.237  -2.338 26.313 no significant difference
+
+Per subset (rho = 10) downtime:
+policy     ER-cal  GB tuned  PI-BDP q05 (calibrated)  TBM (Weibull optimal age)
+subset                                                                         
+DS01-005    41.24     27.03                    26.06                      31.25
+DS02-006    30.93     38.96                   120.60                      41.67
+DS03-012    31.41     35.50                    29.56                      43.48
+DS04        42.55     28.67                    40.00                      40.82
+DS05        31.75     29.63                    25.24                      43.48
+DS06        33.76     30.08                    82.80                      41.67
+DS07        39.02     27.87                    29.96                      33.90
+DS08a-009   59.70    145.45                    90.36                      54.05
+DS08c-008   45.20     45.71                    40.00                      52.63
+
+M2 environment: {"cpu": "model name\t: Intel(R) Xeon(R) CPU @ 2.20GHz", "n_cpu": 2, "python": "3.13.18", "numpy": "2.4.6", "pandas": "2.2.3", "scipy": "1.16.3", "sklearn": "1.6.1", "gpu_visible": false}
+M2 timing over subsets (seconds; PI-BDP fit = median of 3 runs per subset; ML = seed 0; deltas precomputed for ML):
+           fit_s_total  fit_s_max  predict_s_total  n_cycles  predict_ms_per_cycle
+model                                                                             
+GB               2.543      0.380            0.046      2938                 0.016
+MLP             20.529      5.702            0.026      2938                 0.009
+PI-BDP V0        9.908      1.774           18.396      2938                 6.261
+RF               6.225      0.962            0.745      2938                 0.253
+
+M2 reproduction of stored Phase 3 V0 predictions (max absolute difference):
+   subset  n_stored  n_new  n_matched  max_abs_q500  max_abs_q050
+ DS01-005       341    341        341           0.0           0.0
+ DS02-006       202    202        202           0.0           0.0
+ DS03-012       438    438        438           0.0           0.0
+     DS04       344    344        344           0.0           0.0
+     DS05       327    327        327           0.0           0.0
+     DS06       322    322        322           0.0           0.0
+     DS07       344    344        344           0.0           0.0
+DS08a-009       383    383        383           0.0           0.0
+DS08c-008       237    237        237           0.0           0.0
